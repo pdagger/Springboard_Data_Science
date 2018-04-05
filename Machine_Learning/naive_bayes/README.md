@@ -1,4 +1,4 @@
-# Bayesian Clasifier
+# Bayesian Classifier
 
 In this project a naive bayes classifier is built analysing the movie reviews from a subset of the rotten tomatoes database.
 
