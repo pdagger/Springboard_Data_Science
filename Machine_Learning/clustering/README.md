@@ -5,8 +5,8 @@ Customers are divided into groups using clustering analysis and different method
 
 To reproduce this work in Python 3.6 you need:
 
-Numpy
-Pandas
-Sklearn
-Matplotlib
-Seaborn
+- Numpy
+- Pandas
+- Sklearn
+- Matplotlib
+- Seaborn
