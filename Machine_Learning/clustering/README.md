@@ -1,4 +1,5 @@
-Unsupervised Learning: Clustering Analysis
+# Unsupervised Learning: Customer Segmentation Using Clustering
+
 In this project a dataset containing information on marketing 
 newsletters/e-mail campaigns (e-mail offers sent to customers) and transaction level data from customers is analyzed.
 Customers are divided into groups using clustering analysis and different methods are compared.
