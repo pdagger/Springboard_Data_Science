@@ -19,7 +19,7 @@ Below is the summary statistics on that data set.
 
 ![](./Figures/summary_num_jobs_wages.png)
 
-As the table above shows, there are 7 extra states and this needs to be corrected with further data wragling. However let's study with the current dataset if there is a correlation between the number of jobsapplications per state and the average wages per state.
+Let's study with this dataset if there is a correlation between the number of jobsapplications per state and the average wages per state.
 
 ![](./Figures/scatter_prevailing_wage_mean_applications.png)
 
