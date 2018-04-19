@@ -7,7 +7,7 @@ useful value. Those variables are 'prevailing_wage' and 'employer_wage'. The var
 directly by the US Department of Labor from its [wage library](http://www.flcdatacenter.com/OesWizardStart.aspx). 
 The variable 'employer_wage' is what an employer proposes as salary for whom the application is filed. Below is a summary on the statistics of these variables;.
 
-
+![](./Figures/summary_statistics.png)
 
 In the present project,the purpose is to determine the salary a job applicant may expect to propose for salary negociation, so
 the variable 'employer_wage' becomes the target for the model we are going to develop. Of course one of the possible independent variables to use then would be 'prevailing_wage'. For that purpose, the graph below shows a scatter plot of employer proposed wage against the prevailing wage.
