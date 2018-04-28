@@ -8,10 +8,10 @@ When entering the job market for the first time or when transitioning to a new c
 * Recruiters and HR departments.
 
 ## Data:
-The data was obtained directly from the [United States Department of Labor (USDL)](https://www.foreignlaborcert.doleta.gov/performancedata.cfm) and can be downloaded from [here](https://www.foreignlaborcert.doleta.gov/pdf/PerformanceData/2017/H-1B_Disclosure_Data_FY17.xlsx). This data, pertaining to H-1B visa applications, which is a category for high-skilled workers, includes all the applications (even withdrawn ones) sent to USDL in 2017. The data set contains fields related to job position, work category, hiring company and its location, as well as prevailing wage and proposed salary per application.
+The data is obtained directly from the [United States Department of Labor (USDL)](https://www.foreignlaborcert.doleta.gov/performancedata.cfm) and can be downloaded from [here](https://www.foreignlaborcert.doleta.gov/pdf/PerformanceData/2017/H-1B_Disclosure_Data_FY17.xlsx). This data, pertaining to H-1B visa applications, which is a category for high-skilled workers, includes all the applications (even withdrawn ones) sent to USDL in 2017. The data set contains fields related to job position, work category, hiring company and its location, as well as prevailing wage and proposed salary per application among others.
 
 ## Data Wrangling:
-The data being an excel file, it was loaded using Pandas’ ExcelFile() method and the sheet of interest was extracted into a Pandas data frame. The data set having several unnecessary columns for the goal of the project, only the following columns were considered to create a clean data frame:
+The data being an excel file, it is loaded using Pandas’ ExcelFile() method and the sheet of interest is extracted into a Pandas data frame. The data set having several unnecessary columns for the project's goal, only the following columns were considered to create a clean data frame:
 - EMPLOYER_NAME: Name of employer submitting labor condition application.
 - JOB_TITLE: Title of the job.
 - SOC_NAME: Occupational name associated with the SOC_CODE.
