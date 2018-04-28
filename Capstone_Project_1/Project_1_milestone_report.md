@@ -45,5 +45,6 @@ The figure below seems to indicate that the correlation between the state mean p
 ![](./Figures/scatter_employer_wage_prevailing_wage.png)
 
 However if we consider the individual prevailing wages against the individual employer proposed wages, taking only salaries below $300K, the Pearson correlation is high (~0.8646). This indicates that the prevaling wage is may be a good predictor of the target salaries. In addition to this, the figure below shows that most of the salaries are equal or higher than the local prevailing wages.
+
 ![](./Figures/em_wage-pr_wage.png)
 
