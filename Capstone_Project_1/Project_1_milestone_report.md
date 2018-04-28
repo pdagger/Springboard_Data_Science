@@ -19,6 +19,7 @@ The data being an excel file, it is loaded using Pandas’ ExcelFile() method an
 - PREVAILING_WAGE: Prevailing Wage for the job being requested for temporary labor condition.
 - PW_UNIT_OF_PAY: Unit of Pay. Valid values include “Daily (DAI),” “Hourly (HR),” “Bi-weekly (BI),” “Weekly (WK),” “Monthly (MTH),” and “Yearly (YR)”.
 - WAGE_RATE_OF_PAY_FROM: Employer’s proposed wage rate.
+- WAGE_RATE_OF_PAY_TO: Maximum proposed wage rate.
 - WAGE_UNIT_OF_PAY: Unit of pay. Valid values include “Hour", "Week", "Bi-Weekly", "Month",
 or "Year".
 - WORKSITE_CITY :City information of the foreign worker's intended area of employment.
@@ -28,12 +29,17 @@ or "Year".
 
 After this step only 0.21% of the data contained null entries. Given the size of the data set (more than 620K entries), for simplicity the rows with null values were eliminated. The model to develop having the purpose of calculating annual salaries, the entries PW_UNIT_OF_PAY, WAGE_UNIT_OF_PAY and FULL_TIME_POSITION were used to transform all entries from PREVAILING_WAGE and WAGE_RATE_OF_PAY_FROM to annual wages.
 
-Finally the cleaned data set was saved for later use.
+In the column 'WORKSITE_POSTAL_CODE' the postal codes came in several formats: five digits, ten digits, ten digits with a dash after the first five, and codes with other non-numerical characters. All the rows with a non five digits format are transformed to five digits format to reduce the number of categories in this column.
+
+Finally the cleaned data set is saved for later use with the columns 'employer',	'job_title', 'occupational_name',	'prevailing_wage',	'pw_wage_period',	'employer_wage',	'employer_max_wage',	'employer_wage_period',	'city',	'county',	'state' and	'postal_code'.
 
 ## Approach:
 The purpose of this project being to predict an expected salary based on historical data, supervised learning using regression algorithms is used. The location, job title, and prevailing wage are used as predictors in trying to assertain a target salary. To train the model, the data is divided in two: one set is used to predict prevailing wages as a function of location, job title and work category and the second set is used to predict the final target salary as a function of the predicted prevailing wage and the location of employment. Each of these subsets is divided in two in order to have training and testing data to develp the models.
 
-training data and validation data.
+For the first part, predicting the prevailing wage, except for 'prevaling_wage' and 'employer_wage', which are the target variables, all the other columns are categorical. Then the most straight forward approach is to concatenate per row the values of this columns into a single string keeping spaces between words. The resulting strings are encoded using a TF-IDF vectorizer that allows to rewrite them in a numerical form so they can be used for a numerical regression. Given the amount of the data and to avoid computer memory issues, the regression is done using an Stochastic Gradient Descent (SGD) regressor that allows to build a model by data batches.
+
+For the second part, the model in the first part is used to predict prevailing wages. Finally with these prevailing wages and  using the columns 'state' and 'postal_code' the final model predicting salary is built. In this case, given not only the amount of data but also the high number of categories in 'postal_code' (more than 10K), we use also an SGD regressor to build the model.
+
 
 ## Deliverables:
 * Code for:
