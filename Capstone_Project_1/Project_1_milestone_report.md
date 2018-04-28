@@ -41,3 +41,5 @@ For the first part, predicting the prevailing wage, except for 'prevaling_wage' 
 For the second part, the model in the first part is used to predict prevailing wages. Finally with these prevailing wages and  using the columns 'state' and 'postal_code' the final model predicting salary is built. In this case, given not only the amount of data but also the high number of categories in 'postal_code' (more than 10K), we use also an SGD regressor to build the model.
 
 ## Initial Findings:
+The figure below seems to indicate that the correlation between the state mean prevailing wage and the state mean employer proposed wage is low. This is confirmed by the Pearson correlation coefficient that has a value of 0.1888.
+[!figure](./Figures/scatter_employer_wage_prevailing_wage.png)
