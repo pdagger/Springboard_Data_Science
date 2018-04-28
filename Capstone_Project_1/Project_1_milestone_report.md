@@ -40,10 +40,4 @@ For the first part, predicting the prevailing wage, except for 'prevaling_wage' 
 
 For the second part, the model in the first part is used to predict prevailing wages. Finally with these prevailing wages and  using the columns 'state' and 'postal_code' the final model predicting salary is built. In this case, given not only the amount of data but also the high number of categories in 'postal_code' (more than 10K), we use also an SGD regressor to build the model.
 
-
-## Deliverables:
-* Code for:
-  * Data cleaning if performed.
-  * Data analysis and regression.
-* Written report.
-* Presentation.
+## Initial Findings:
