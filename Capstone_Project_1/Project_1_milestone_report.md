@@ -42,4 +42,9 @@ For the second part, the model in the first part is used to predict prevailing w
 
 ## Initial Findings:
 The figure below seems to indicate that the correlation between the state mean prevailing wage and the state mean employer proposed wage is low. This is confirmed by the Pearson correlation coefficient that has a value of 0.1888.
-[!figure](./Figures/scatter_employer_wage_prevailing_wage.png)
+![](./Figures/scatter_employer_wage_prevailing_wage.png)
+
+However if we consider the individual prevailing wages against the individual employer proposed wages, taking only salaries below $300K, the Pearson correlation is high (~0.8646) as the figure below suggests.
+![](./Figures/em_wage-pr_wage.png)
+
+This figure also suggests that most of the salaries are higher than the local prevailing wages.
