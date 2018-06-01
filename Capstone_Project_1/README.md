@@ -18,7 +18,8 @@ by linear regression or random forest regression.
 ## Instructions
 ### Data set
 The data for this project can be downloaded from [here](https://www.foreignlaborcert.doleta.gov/pdf/PerformanceData/2017/H-1B_Disclosure_Data_FY17.xlsx).
-
+### Initial Data Exploration
+Data exploration can be found in the file [Data_visualization.ipynb](https://github.com/pdagger/Springboard_Data_Science/blob/master/Capstone_Project_1/data/Data_visualization.ipynb) located in the [data](https://github.com/pdagger/Springboard_Data_Science/blob/master/Capstone_Project_1/data/) folder.
 ### Working environment
 To process the data set and run the project create a new environment in your local machine using the files in the [Requirements](https://github.com/pdagger/Springboard_Data_Science/tree/master/Capstone_Project_1/Requirements) folder:
 
