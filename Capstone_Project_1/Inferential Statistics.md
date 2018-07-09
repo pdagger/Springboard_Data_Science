@@ -10,7 +10,7 @@ The variable 'employer_wage' is what an employer proposes as salary for whom the
 
 In the present project,the purpose is to determine the salary a job applicant may expect to propose for salary negociation, so the variable 'employer_wage' becomes the target for the model we are going to develop. Of course one of the possible independent variables to use would then be 'prevailing_wage'. For this purpose, the graph below shows a scatter plot of employer proposed wage against prevailing wage.
 
-![](./Figures/scatter_preveailing_wage_mean_applications.png)
+![](./Figures/scatter_employer_wage_prevailing_wage.png)
 
 From the plot it doesn't seem to exist an obvious correlation between the prevailing wage and employer proposed wage. This is confirmed by the Pearson correlation between both variables which turns out to give just an 18.88% degree of correlation between both variables.
 
