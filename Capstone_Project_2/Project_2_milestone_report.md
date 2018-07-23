@@ -25,7 +25,7 @@ The purpose of the project being to classify images using two possible labels, t
 
 Given that the classes are unbalanced, the 'stratify' option from scikit-learn's 'train_test_split' method is used. This ensures that the 2.5 to 1 ratio between the classes is preserved in the training and validation sets.
 
-To assess the fitnnes of the developped model, it is important to know how many labels in the validation set are predicted correctly. So, the metric of choice to evaluate the model is accuracy. The accuracy calculates the percentage of correct predicted labels to the total number of labels. To explain this with an equation let's define the following terms:
+To assess the fitness of the developped model, it is important to know how many labels in the validation set are predicted correctly. So, the metric of choice to evaluate the model is the accuracy. The accuracy calculates the number of correct predicted labels to the total number of labels. To explain this with an equation let's define first the following terms:
 
 TP: true positives, it represents the images correctly identified as 1, meaning IDC baing part of an IDC region.
 
@@ -37,5 +37,12 @@ FN: false negatives, it defines IDC region images identified as 0 or being healt
 
 With theses definitions at hand, the accuracy is defined as:
 
-![\Large x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}](https://latex.codecogs.com/svg.latex?x%3D%5Cfrac%7B-b%5Cpm%5Csqrt%7Bb%5E2-4ac%7D%7D%7B2a%7D)
+![Accuracy](https://latex.codecogs.com/gif.latex?Accuracy&space;=&space;\frac{TP&space;&plus;&space;TN}{TP&space;&plus;&space;TN&space;&plus;&space;FP&space;&plus;&space;FN})
 
+In addition to the accuracy, given that classes are unbalanced, a metric of interest is the F<sub>1</sub> score:
+
+![F_1](https://latex.codecogs.com/gif.latex?F_1&space;=&space;\frac{2}{\frac{1}{Precision}&space;&plus;&space;\frac{1}{Recall}}&space;=&space;2\frac{Precision.Recall}{Precision&space;&plus;&space;Recall})
+
+Having determined how to split the data and the evaluation metrics, now it is important to define a benchmark model to assess the developed models. Given that the classes are unbalanced and that the negative classes dominates the positive classes, a model predicting that all the images correspond to a label of 0 is a good starting model.
+
+# Initial Findings
