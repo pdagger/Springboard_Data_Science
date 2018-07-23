@@ -21,4 +21,21 @@ The images come from a clean data set, so they don't need to be preprocessed. Ho
 Finally, to avoid any possible errors when loading the data and traning training the classification model, only files corressponding to 50x50 pixels images size are considered.
 
 ## Approach:
-The purpose of the project being to classify images among two labels, this is a supervised binary classification problem. In recent years convolutional neural networks (CNN) have been proven to be very efficient in recognizing and classifying images. So, in this project we are going to develop or use an existing CNN architecture in order to identify IDC images. To train the CNN model, the data is going to be divided in two: training data and validation data.
+The purpose of the project being to classify images using two possible labels, this is by defibition a supervised binary classification problem. In recent years convolutional neural networks (CNN) have been proven to be very efficient in recognizing and classifying images. So, in this project the goal is to develop or use an existing CNN architecture in order to identify IDC images. To train the CNN model, the data is divided in two: 90% as training set and 10% validation set.
+
+Given that the classes are unbalanced, the 'stratify' option from scikit-learn's 'train_test_split' method is used. This ensures that the 2.5 to 1 ratio between the classes is preserved in the training and validation sets.
+
+To assess the fitnnes of the developped model, it is important to know how many labels in the validation set are predicted correctly. So, the metric of choice to evaluate the model is accuracy. The accuracy calculates the percentage of correct predicted labels to the total number of labels. To explain this with an equation let's define the following terms:
+
+TP: true positives, it represents the images correctly identified as 1, meaning IDC baing part of an IDC region.
+
+FP: false postives, it denotes the images of healthy tissue incorrectly indetified as 1.
+
+TN: true negatives, it refers to the healthy tissue images correctly identified as 0.
+
+FN: false negatives, it defines IDC region images identified as 0 or being healthy.
+
+With theses definitions at hand, the accuracy is defined as:
+
+![\Large x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}](https://latex.codecogs.com/svg.latex?x%3D%5Cfrac%7B-b%5Cpm%5Csqrt%7Bb%5E2-4ac%7D%7D%7B2a%7D)
+
