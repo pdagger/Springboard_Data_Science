@@ -12,7 +12,7 @@ The most common breast cancer subtype is the Invasive Ductal Carcinoma (IDC). In
 The curated data is obtained directly from [Kaggle.com](https://www.kaggle.com/paultimothymooney/breast-histopathology-images/data). The data contains only whole slides images divided by patient. Each whole slide image is segmented in patches of 50x50 pixels. Each of the patches corresponds either to an IDC region or a cancer free region. Each image patch class is contained in its file name. The presence of IDC is indicated by a 1 while 0 corresponds to an IDC free area.
 
 ## Data Wrangling:
-The data corresponds to histopathology slides from patients presenting IDC. There is a total of 279 patients. Each slide contains cancerous and non-cancerous regions. Each image slide has been previously segemented in separated images of 50x50 pixels. The small size of these regions allows to classify them as being only IDC images or healthy tissue images.
+The data corresponds to histopathology slides from patients presenting IDC. There is a total of 279 patients. Each slide contains cancerous and non-cancerous regions. Each image slide has been previously segemented in separated color images of 50x50x3 (the third dimension corresponding to RGB color coding).The small size of these regions allows to classify them as being only IDC images or healthy tissue images.
 
 As mentioned before, the class type for each 50x50 pixel image is indicated in its file name. The file name consists of three parts: a four digit number identifying the patient, a set of (x, y) coordinates corresponding to the region position in the whole slide, and finally the category class. The class can be eithert 0 or 1. 0 represents health tissue or absence of cancer while 1 correponds to regions were IDC was found.
 
@@ -43,6 +43,31 @@ In addition to the accuracy, given that classes are unbalanced, a metric of inte
 
 ![F_1](https://latex.codecogs.com/gif.latex?F_1&space;=&space;\frac{2}{\frac{1}{Precision}&space;&plus;&space;\frac{1}{Recall}}&space;=&space;2\frac{Precision.Recall}{Precision&space;&plus;&space;Recall})
 
+Where *Precision = TP/(TP+FP)* and *Recall=TP/(TP+FN)*.
+
 Having determined how to split the data and the evaluation metrics, now it is important to define a benchmark model to assess the developed models. Given that the classes are unbalanced and that the negative classes dominates the positive classes, a model predicting that all the images correspond to a label of 0 is a good starting model.
 
 # Initial Findings
+The image below shows a healthy tissue image and an IDC region image:
+![healty_IDC](./images/healthy_IDC.png)
+
+The image below indicates that consdering image patterns or color distributions may be used to define useful machine learning features. However a review [[1]] on the used data set indicates that machine learning models don't perform as well as neural networks for the classification task at hand. So, the model developed in this project corresponds to a neural network using CNNs.
+
+Before developing the CNN architecture, let's study first the results given by the naive benchmark model that predicts all the labels as 0. Such a model results in the following results:
+
+*True postives: 0*
+
+*False postives: 0*
+
+*True negatives: 196,454*
+
+*False negatives: 78,768*
+
+These values correspond to an accuracy of 71.38% and an F<sub>1</sub> score for the negative labels of 83.30%.
+
+From these initial results, then it is set as a goal to develop a model having an accuracy higher than 72% and an F<sub>1</sub> higher than 83.5%.
+
+
+# References
+[1]: http://spie.org/Publications/Proceedings/Paper/10.1117/12.2043872
+1. Angel Cruz-Roa et al., [*Automatic detection of invasive ductal carcinoma in whole slide images with convolutional neural networks*](http://spie.org/Publications/Proceedings/Paper/10.1117/12.2043872), Proc. SPIE 9041, Medical Imaging 2014: Digital Pathology, 904103 (20 March 2014)
