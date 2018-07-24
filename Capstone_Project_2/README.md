@@ -1,4 +1,4 @@
-# Capstone Project: Classification of Histopatholgy Breast Images
+# Capstone Project. Detecting Breast Cancer: Classification of Histopatholgy Breast Images
 
 ## Problem
 
