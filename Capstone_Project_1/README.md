@@ -1,4 +1,4 @@
-# Capstone Project: Predict Salaries from H-1B Applications
+# Capstone Project: Predicting Salaries from H-1B Applications
 
 ## Problem
 
