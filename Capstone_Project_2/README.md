@@ -32,3 +32,18 @@ pip install -r requirements/requirements.txt
 conda create --name histo python=3
 activate histo
 pip install -r requirements/requirements.txt
+
+```
+
+### Switch Keras backend to TensorFlow.
+
+- __Linux__ or __Mac__:
+```
+ KERAS_BACKEND=tensorflow python -c "from keras import backend"
+ ```
+
+- __Windows__:
+```
+ set KERAS_BACKEND=tensorflow
+ python -c "from keras import backend"
+```
