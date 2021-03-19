@@ -7,7 +7,7 @@ The classifier developed in this project uses CNN networks and reaches an accura
 
 ## Instructions
 ### Data set
-This project uses clasified breast histopatology images downloaded from this [Kaggle link](https://www.kaggle.com/paultimothymooney/breast-histopathology-images/data).
+This project uses classified breast histopatology images downloaded from this [Kaggle link](https://www.kaggle.com/paultimothymooney/breast-histopathology-images/data).
 The images are 50x50 pixels color images in RGB format.
 
 ### Working environment
